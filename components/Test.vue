@@ -34,7 +34,7 @@
         <a href="#" class="flex items-center justify-center w-full text-center p-3 font-semibold text-gray-900 hover:bg-[#12b886]">
           <Icon class="mr-2" name="mdi:credit-card-fast-outline" size="25px"></Icon> Complate Order 
         </a>
-        <h1>Total Price :  {{ TotalPrice || 0 }} </h1>
+        <h1 class="hover:bg-[#12b886]  w-full text-center p-3 font-bold cursor-default">Total Price :  {{ TotalPrice || 0 }}$ </h1>
       </div>
        </div>
       </div>
@@ -44,7 +44,6 @@
 </template>
 
 <script setup>
-import nuxtStorage from "nuxt-storage";
 import { storeToRefs } from "pinia";
 import { useProductsStore } from "~/stores/ProductsStore";
 const productsStore = useProductsStore();
@@ -59,7 +58,6 @@ const TotalPrice = computed(() => {
  let uniqueOrder = [];
  let count = {};
 order.value.forEach((product) => {
-
     if (!uniqueOrder.includes(product)) {
         uniqueOrder.push(product);
         }

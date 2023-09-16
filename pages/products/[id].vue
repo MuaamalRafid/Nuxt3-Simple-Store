@@ -18,6 +18,11 @@
         >
           Price: ${{ product.price }}
         </p>
+          <div class="flex gap-2 justify-center items-center"> 
+          <button @click="increment" class="bg-[#2ee599] hover:bg-black hover:text-[#2ee599] px-4 py-1 rounded-md font-bold flex justify-center items-center">+</button>
+          <div class="bg-gray-100 w-7 text-center ">{{productCounter}}</div>
+          <button @click="decrement" class="bg-[#2ee599] hover:bg-black hover:text-[#2ee599] px-4 py-1 rounded-md font-bold text-xl flex justify-center items-center">-</button>
+        </div>
         <NuxtLink
           @click="productsStore.addToOrder(product,productCounter)"
           to="/products"
@@ -30,11 +35,7 @@
             <Icon name="tabler:shopping-cart-plus" size="30px" />
           </div>
         </NuxtLink>
-        <div class="flex gap-3 justify-center items-center"> 
-          <button @click="increment" class="bg-[#2ee599] px-4 py-1 rounded-md font-bold flex justify-center items-center">+</button>
-          <div class="bg-gray-100 w-7 text-center ">{{productCounter}}</div>
-          <button @click="decrement" class="bg-[#2ee599] px-4 py-1 rounded-md font-bold text-xl flex justify-center items-center">-</button>
-        </div>
+      
       </div>
     </div>
 

@@ -32,12 +32,14 @@
       </div>
     </div>
 
+    <transition name="image" appear>
     <div class="image basis-1/2">
       <img
         src="~/assets/homepage.png"
         alt=""
       />
     </div>
+    </transition>
   </div>
 </template>
 <script setup>
@@ -45,6 +47,18 @@
 <style>
 body {
   background-color: #fbfbfb;
+}
+
+.image-enter-from{
+  opacity: 0;
+  transform: translateX(100%);
+}
+.image-enter-to{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.image-enter-active{
+  animation: slide-in 1s ease-out forwards;
 }
 
 </style>
